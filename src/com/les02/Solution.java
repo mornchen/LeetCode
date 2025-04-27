@@ -10,10 +10,10 @@ import java.util.Map;
     请找出在 t 中被添加的字母。
 */
 
-public class MP {
+public class Solution {
 
     public static void main(String[] args) {
-        MP fd = new MP();
+        Solution fd = new Solution();
         String s = "qivne";
         String t = "eqnigv";
         char result = fd.findTheDifference3(s, t);

@@ -13,7 +13,7 @@ package com.les01;
     返回 合并后的字符串 。
 */
 
-public class MP {
+public class Solution {
 
     /**
      * 交替合并两个字符串的核心方法
@@ -54,7 +54,7 @@ public class MP {
      * @param args 命令行参数（未使用）
      */
     public static void main(String[] args) {
-        MP merger = new MP();
+        Solution merger = new Solution();
 
         // 测试示例1：等长字符串
         String result1 = merger.mergeAlternately("abc", "pqr");
