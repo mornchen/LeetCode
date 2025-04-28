@@ -44,7 +44,7 @@ public class Solution {
     public boolean repeatedSubstringPattern(String s) {
         // 获取字符串长度
         int n = s.length();
-        
+
         /**
          * 遍历所有可能的子串长度i（从1到n/2）
          * 为什么只遍历到n/2？
@@ -53,7 +53,7 @@ public class Solution {
          * - 例如：对于长度6的字符串，最多检查长度为3的子串（需要重复2次）
          */
         for (int i = 1; i * 2 <= n; ++i) {
-            
+
             /**
              * 检查字符串长度n是否能被子串长度i整除（字符串长度n必须能被候选子串长度i整除，通过整除性排除不可能的子串长度）
              * 为什么需要这个条件？
@@ -64,7 +64,7 @@ public class Solution {
             if (n % i == 0) {
                 // 初始化匹配标志为true
                 boolean match = true;
-                
+
                 /**
                  * 检查字符串是否确实由长度为i的子串重复构成
                  * 从第i个字符开始比较（因为前i个字符就是候选子串）
@@ -96,3 +96,4 @@ public class Solution {
         return false;
     }
 }
+
