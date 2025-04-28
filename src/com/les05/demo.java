@@ -4,30 +4,28 @@ public class demo {
 
     public static void main(String[] args) {
         demo demo = new demo();
-        boolean flag = demo.repeatedSubstringPattern("hellohello");
+        boolean flag = demo.repeatedSubstringPattern("abcabcabc");
 
         System.out.println(flag);
     }
 
     public boolean repeatedSubstringPattern(String s) {
-        char[] chars = new char[s.length()];
+        int n = s.length();
+        for (int i = 1; i * 2 <= n; i++) {
 
-        for (int i = 0; i < s.length(); i++) {
-            chars[i] = s.charAt(i);
-        }
-
-
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 2; j < s.length(); j++) {
-                if (chars[i] == chars[j] && j < s.length() - 1) {
-                    for (int k = i + 1; k < j; k++) {
-                        if (chars[k] != chars[j+k] && (j+k) < (s.length() - 1)) {
-                            break;
-                        }
+            if (n % i == 0) {
+                boolean flag = true;
+                for (int j = i; j < n; j++) {
+                    if (s.charAt(j) != s.charAt(j-i)) {
+                        flag = false;
                     }
                 }
 
+                if (flag) {
+                    return true;
+                }
             }
+
         }
 
         return false;
